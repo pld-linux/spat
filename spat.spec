@@ -3,13 +3,13 @@ Summary(pl):	Prosty klient komunikowania siê
 Name:		spat
 Version:	1.0 
 Release:	1
-Copyright:	Codehost.com, Inc. 
+License:	GPL
+Vendor:		Codehost.com, Inc.
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
 Source0:	http://spat.codehost.com/%{name}-%{version}.src.tar.gz
-URL:		http://spat.codehost.com
-Vendor:		Codehost.com, Inc.
+URL:		http://spat.codehost.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
