@@ -51,11 +51,9 @@ install spatd.gnorba $RPM_BUILD_ROOT%{_sysconfdir}/CORBA/servers
 install pixmaps/gnome-intranet.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
 install pixmaps/spat.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
 
-gzip -9nf doc/FAQ AUTHORS
-
 %files
 %defattr(644,root,root,755)
-%doc doc/FAQ.gz AUTHORS.gz
+%doc doc/FAQ AUTHORS
 %{_sysconfdir}/CORBA/servers/spatd.gnorba
 %attr(755,root,root) %{_bindir}/spat
 %attr(755,root,root) %{_bindir}/spatd
