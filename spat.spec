@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Codehost.com, Inc.
 Group:		X11/Applications/Networking
 Source0:	http://spat.codehost.com/%{name}-%{version}.src.tar.gz
+# Source0-md5:	25b81ab1d7430ea93fef91a9151d0069
 URL:		http://spat.codehost.com/
 BuildRequires:	gnome-core-devel
 BuildRequires:	gnome-libs-devel
