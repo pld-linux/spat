@@ -13,7 +13,6 @@ BuildRequires:	gnome-core-devel
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 Spat! is a lightweight, GNOME compliant messaging application designed
 and distributed by Codehost.com, Inc. This instant messaging system
@@ -47,8 +46,8 @@ install spat.desktop $RPM_BUILD_ROOT%{_applnkdir}/Intranet
 install Intranet.directory $RPM_BUILD_ROOT%{_datadir}/applets/Intranet/.directory
 install spatd.desktop $RPM_BUILD_ROOT%{_datadir}/applets/Intranet
 install spatd.gnorba $RPM_BUILD_ROOT%{_sysconfdir}/CORBA/servers
-install pixmaps/gnome-intranet.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
-install pixmaps/spat.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
+install pixmaps/gnome-intranet.png $RPM_BUILD_ROOT%{_pixmapsdir}
+install pixmaps/spat.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %files
 %defattr(644,root,root,755)
@@ -60,11 +59,11 @@ install pixmaps/spat.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
 %{_applnkdir}/Intranet/spat.desktop
 %{_datadir}/applets/Intranet/.directory
 %{_datadir}/applets/Intranet/spatd.desktop
-%{_datadir}/pixmaps/gnome-intranet.png
-%{_datadir}/pixmaps/spat.png
-%{_datadir}/pixmaps/spat/about.jpg
-%{_datadir}/pixmaps/spat/away_with_msg.png
-%{_datadir}/pixmaps/spat/ok.png
+%{_pixmapsdir}/gnome-intranet.png
+%{_pixmapsdir}/spat.png
+%{_pixmapsdir}/spat/about.jpg
+%{_pixmapsdir}/spat/away_with_msg.png
+%{_pixmapsdir}/spat/ok.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
