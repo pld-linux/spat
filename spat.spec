@@ -1,7 +1,5 @@
-#
-# Spat spec file
-#
-Summary:	A simple messageing client.
+Summary:	A simple messaging client
+Summary(pl):	Prosty klient komunikowania siê
 Name:		spat
 Version:	1.0 
 Release:	1
@@ -12,43 +10,45 @@ Group(pl):	Aplikacje/Sieciowe
 Source0:	http://spat.codehost.com/%{name}-%{version}.src.tar.gz
 URL:		http://spat.codehost.com
 Vendor:		Codehost.com, Inc.
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Spat! is a lightweight, GNOME compliant messaging application designed
 and distributed by Codehost.com, Inc. This instant messaging system
 was developed to easily install and run on a TCP/IP network.
 
+%description -l pl
+Spat! jest niewielk±, zgodn± z GNOME aplikacj± napisan± i
+dystrybuowan± przez Codehost.com, Inc. Ten system komunikowania siê
+by³ projektowany z my¶l± o ³atwo¶ci instalacji i dzia³aniu po sieci
+TCP/IP.
+
 %prep
-rm -rf $RPM_BUILD_DIR/spat-1.0
-zcat $RPM_BUILD_DIR/spat-1.0.src.tar.gz | tar -xvf -
+%setup -q
 
 %build
-cd spat-1.0
 ./configure
 %{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd spat-1.0
-%{__make} install
-if [ ! -d %{_applnkdir}/Intranet/ ]
-then mkdir %{_applnkdir}/Intranet 
-fi
-if [ ! -d %{_datadir}/applets/Intranet/ ]
-then mkdir %{_datadir}/applets/Intranet
-fi
-cp -f Intranet.directory %{_applnkdir}/Intranet/.directory
-cp -f spat.desktop %{_applnkdir}/Intranet
-cp -f Intranet.directory %{_datadir}/applets/Intranet/.directory
-cp -f spatd.desktop %{_datadir}/applets/Intranet
-cp -f spatd.gnorba %{_sysconfdir}/CORBA/servers/
-cp -f pixmaps/gnome-intranet.png %{_datadir}/pixmaps
-cp -f pixmaps/spat.png %{_datadir}/pixmaps
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Intranet,%{_datadir}/applets/Intranet}
+
+install Intranet.directory $RPM_BUILD_ROOT%{_applnkdir}/Intranet/.directory
+install spat.desktop $RPM_BUILD_ROOT%{_applnkdir}/Intranet
+install Intranet.directory $RPM_BUILD_ROOT%{_datadir}/applets/Intranet/.directory
+install spatd.desktop $RPM_BUILD_ROOT%{_datadir}/applets/Intranet
+install spatd.gnorba $RPM_BUILD_ROOT%{_sysconfdir}/CORBA/servers/
+install pixmaps/gnome-intranet.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
+install pixmaps/spat.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
+
+gzip -9nf FAQ
 
 %files
 %defattr(644,root,root,755)
-%doc spat-1.0/doc/FAQ
-%doc spat-1.0/doc/INSTALL
+%doc doc/FAQ.gz
 
 %{_sysconfdir}/CORBA/servers/spatd.gnorba
 %{_prefix}/local/bin/spat
