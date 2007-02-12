@@ -1,5 +1,5 @@
 Summary:	A simple messaging client
-Summary(pl):	Prosty klient komunikowania siê
+Summary(pl.UTF-8):   Prosty klient komunikowania siÄ™
 Name:		spat
 Version:	1.0
 Release:	1
@@ -18,10 +18,10 @@ Spat! is a lightweight, GNOME compliant messaging application designed
 and distributed by Codehost.com, Inc. This instant messaging system
 was developed to easily install and run on a TCP/IP network.
 
-%description -l pl
-Spat! jest niewielk±, zgodn± z GNOME aplikacj± napisan± i
-dystrybuowan± przez Codehost.com, Inc. Ten system komunikowania siê
-by³ projektowany z my¶l± o ³atwo¶ci instalacji i dzia³aniu po sieci
+%description -l pl.UTF-8
+Spat! jest niewielkÄ…, zgodnÄ… z GNOME aplikacjÄ… napisanÄ… i
+dystrybuowanÄ… przez Codehost.com, Inc. Ten system komunikowania siÄ™
+byÅ‚ projektowany z myÅ›lÄ… o Å‚atwoÅ›ci instalacji i dziaÅ‚aniu po sieci
 TCP/IP.
 
 %prep
