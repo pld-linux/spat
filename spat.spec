@@ -1,5 +1,5 @@
 Summary:	A simple messaging client
-Summary(pl.UTF-8):   Prosty klient komunikowania się
+Summary(pl.UTF-8):	Prosty klient komunikowania się
 Name:		spat
 Version:	1.0
 Release:	1
